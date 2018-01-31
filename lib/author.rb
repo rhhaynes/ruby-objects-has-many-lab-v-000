@@ -11,6 +11,19 @@ class Author
     @@post_count
   end
   
+  def add_post(post)
+    @posts << post
+    @@post_count += 1
+    self.name = post
+    post
+  end
   
+  def add_post_by_title(title)
+    post = Post.new(title)
+    @posts << post
+    @@post_count += 1
+    self.name = post
+    post
+  end
   
 end
